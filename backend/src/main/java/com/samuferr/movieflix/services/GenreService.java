@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.samuferr.movieflix.dto.GenreDTO;
 import com.samuferr.movieflix.entities.Genre;
 import com.samuferr.movieflix.repositories.GenreRepository;
+import com.samuferr.movieflix.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class GenreService {
@@ -28,7 +31,7 @@ public class GenreService {
 	@Transactional(readOnly = true)
 	public GenreDTO findById(Long id) {
 		Optional<Genre> obj = repository.findById(id);
-		Genre entity = obj.get();
+		Genre entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
 		return new GenreDTO(entity);
 	}
 
@@ -38,5 +41,18 @@ public class GenreService {
 		entity.setName(dto.getName());
 		entity = repository.save(entity);
 		return new GenreDTO(entity);
+	}
+
+	@Transactional
+	public GenreDTO update(Long id, GenreDTO dto) {
+		try { 
+		Genre entity = repository.getOne(id);
+		 entity.setName(dto.getName());
+		 entity = repository.save(entity);
+		 return new GenreDTO(entity);
+		}
+		catch(EntityNotFoundException e) {
+			throw new ResourceNotFoundException("Id not found " + id);
+		}
 	}
 }
