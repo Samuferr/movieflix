@@ -3,10 +3,13 @@ package com.samuferr.movieflix.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,19 +24,26 @@ public class Movie implements Serializable {
 	private String subTitle;
 	private Integer year;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String synopsis;
 	
-	public Movie() {
-		
+	
+	@ManyToOne
+	@JoinColumn(name = "genre_id")
+	private Genre genre;
+	
+	public Movie() {	
 	}
 
-	public Movie(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis) {
+	public Movie(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, Genre genre) {
 		this.id = id;
 		this.title = title;
 		this.subTitle = subTitle;
 		this.year = year;
 		this.imgUrl = imgUrl;
 		this.synopsis = synopsis;
+		this.genre = genre;
 	}
 
 	public Long getId() {
@@ -84,6 +94,14 @@ public class Movie implements Serializable {
 		this.synopsis = synopsis;
 	}
 
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -100,5 +118,6 @@ public class Movie implements Serializable {
 		Movie other = (Movie) obj;
 		return Objects.equals(id, other.id);
 	}
+
 	
 }
