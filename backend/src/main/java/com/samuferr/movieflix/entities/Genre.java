@@ -36,10 +36,6 @@ public class Genre implements Serializable {
 	@OneToMany(mappedBy = "genre")
 	private List<Movie> movies = new ArrayList<>();
  	
- 	@JsonIgnore
-	@OneToMany(mappedBy = "movie")
-	private List<Review> reviews = new ArrayList<>();
- 	
  	public Genre() {
  		
  	}
@@ -63,10 +59,6 @@ public class Genre implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public List<Review> getReviews() {
-		return reviews;
 	}
 
 	@Override
