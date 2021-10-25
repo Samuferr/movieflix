@@ -1,9 +1,10 @@
-package com.samuferr.movieflix.resources.excpetions;
+package com.samuferr.movieflix.resources.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;
 
 public class StandardError implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	private Instant timestamp;
@@ -12,16 +13,14 @@ public class StandardError implements Serializable {
 	private String message;
 	private String path;
 	
-	public StandardError() {
-		
-	}
+	public StandardError() {}
 
 	public Instant getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Instant instant) {
-		this.timestamp = instant;
+	public void setTimestamp(Instant timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public Integer getStatus() {
@@ -55,6 +54,5 @@ public class StandardError implements Serializable {
 	public void setPath(String path) {
 		this.path = path;
 	}
-	
-	
+
 }
