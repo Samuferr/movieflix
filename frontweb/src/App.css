@@ -1,10 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --appBackground: #525252;
+  --mediumGray: #6C6C6C;
+  --lightGray: #9E9E9E;
+  --yellow: #FFC700;
+  --white: #FFF;
+  --black: #000;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  background-color: var(--appBackground);
+}
+
 h1, h2, h3, h4, h5, h6 {
+  color: var(--white);
   font-weight: 700;
   margin-bottom: 0;
+}
+
+p {
+  color: var(--lightGray);
+}
+
+a, a:hover {
+  text-decoration: none;
 }

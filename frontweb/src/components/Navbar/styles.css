@@ -1,0 +1,20 @@
+.main-nav {
+  min-height: 68px;
+  padding-left: 49px;
+  padding-bottom: 17px;
+  padding-top: 18px;
+}
+
+.nav-logo-text {
+  font-size: 24px;
+  color: var(--black);
+}
+
+.navbar-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
