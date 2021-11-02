@@ -1,6 +1,6 @@
 import './styles.css';
 
-function Navbar() {
+const Navbar = () => {
     return (
         <nav className="main-nav navbar bg-primary">
         <div className="container-fluid navbar-content">
