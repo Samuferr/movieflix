@@ -5,9 +5,11 @@
   padding-top: 18px;
 }
 
-.nav-logo-text {
+.nav-logo-text h4{
   font-size: 24px;
   color: var(--black);
+  line-height: 33px;
+  letter-spacing: -0.015em;
 }
 
 .navbar-content {
