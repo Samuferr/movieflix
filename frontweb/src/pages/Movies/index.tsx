@@ -1,11 +1,12 @@
+import MovieCard from "components/MovieCard";
 import Navbar from "components/Navbar";
 
 const Movies = () => {
     return (
       <>
       <Navbar />
-      <div className="container my-4">
-          <h1>Tela de Movies</h1>
+      <div className="conteiner my-4">
+          <MovieCard />
       </div>
       </>  
     );
