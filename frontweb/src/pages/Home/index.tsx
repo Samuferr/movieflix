@@ -20,7 +20,7 @@ const Home = () => {
             <MainImage />    
         </div>
         </div>
-        <div className="card-container">
+        <div className="base-card card-container">
             <h1>LOGIN</h1>
         </div>
         </div>
