@@ -1,11 +1,11 @@
 import './assets/styles/custom.scss'
 import './App.css';
-import MovieCard from 'components/MovieCard';
+import Movies from 'pages/Movies';
 
 function App() {
   return (
     <>
-    <MovieCard />
+    <Movies/>
     </>
   );
 }
