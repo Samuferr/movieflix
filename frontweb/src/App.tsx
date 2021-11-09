@@ -1,11 +1,11 @@
 import './assets/styles/custom.scss'
 import './App.css';
-import Movies from 'pages/Movies';
+import Routes from 'Routes';
 
 function App() {
   return (
     <>
-    <Movies/>
+    <Routes />
     </>
   );
 }
