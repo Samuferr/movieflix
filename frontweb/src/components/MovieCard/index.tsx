@@ -9,12 +9,12 @@ const MovieCard = ({movie} : Props) => {
     return (
         <div className="base-card movie-card">
             <div className="card-top">
-                <img src={movie.imgUrl} alt="Nome do filme" className="movie-img"/>
+                <img src={movie.imgUrl} alt={movie.title} className="movie-img"/>
             </div>
             <div className="card-bottom">
-                <h4>O Retorno do Rei</h4>
-                <h6>2010</h6>
-                <p>Pequeno texto sobre o filme</p>
+                <h4>{movie.title}</h4>
+                <h6>{movie.year}</h6>
+                <p>{movie.subTitle}</p>
             </div>
         </div>
     );

@@ -2,10 +2,8 @@ import { Category } from "./category"
 
 export type Movie = {
     id: number;
-    name: string;
-    description: string;
-    price: number;
+    title: string;
+    subTitle: string;
+    year: number;
     imgUrl: string;
-    date: string;
-    categories: Category [];  
 };

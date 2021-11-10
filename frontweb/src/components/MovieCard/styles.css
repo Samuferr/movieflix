@@ -1,34 +1,37 @@
 .base-card {
-    width: 258px;
-    height: 322px;
+  width: 258px;
+  height: 322px;
 }
 
 .movie-card {
-    margin-right: 20px;
-    border: 2px solid red
+  margin-right: 20px;
 }
 .card-top {
-    border: 2px solid yellow;
-    padding: 16px 0;
+  padding: 16px 0;
 }
 
-.card-top img{
-text-align: center;
-width: 258px;
-height: 165px;
+.card-top img {
+  text-align: center;
+  width: 258px;
+  height: 165px;
 }
 
 .card-bottom {
-    border: 2px solid white;
-    padding: 10px 10px 30px 15px;
+  padding: 10px 10px 30px 15px;
 }
 
-.card-bottom h4{
-    font-size: 20px;
-    color: #FFFFFF;
+.card-bottom h4 {
+  font-size: 20px;
+  color: #ffffff;
 }
 
-.card-bottom h6{
-    font-size: 16px;
-    color: #FFC700;
+.card-bottom h6 {
+  font-size: 16px;
+  color: #ffc700;
+}
+
+.card-bottom p {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: normal;
 }
