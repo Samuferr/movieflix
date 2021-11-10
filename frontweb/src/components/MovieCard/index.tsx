@@ -1,11 +1,15 @@
-import MovieImg from 'assets/images/movie.png'
+import { Movie } from 'types/movie';
 import './styles.css'
 
-const MovieCard = () => {
+type Props = {
+    movie: Movie
+}
+
+const MovieCard = ({movie} : Props) => {
     return (
         <div className="base-card movie-card">
             <div className="card-top">
-                <img src={MovieImg} alt="Nome do filme" className="movie-img"/>
+                <img src={movie.imgUrl} alt="Nome do filme" className="movie-img"/>
             </div>
             <div className="card-bottom">
                 <h4>O Retorno do Rei</h4>
