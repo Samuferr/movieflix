@@ -1,4 +1,5 @@
 import MovieCard from 'components/MovieCard';
+import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 
 const Movies = () => {
@@ -15,16 +16,24 @@ const Movies = () => {
     <div className="container my-4">
       <div className="row">
         <div className="col-sm-6 col-md-5 col-lg-3">
-          <MovieCard movie={movie} />
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
         </div>
         <div className="col-sm-6 col-md-5 col-lg-3">
-          <MovieCard movie={movie} />
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
         </div>
         <div className="col-sm-6 col-md-5 col-lg-3">
-          <MovieCard movie={movie} />
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
         </div>
         <div className="col-sm-6 col-md-5 col-lg-3">
-          <MovieCard movie={movie} />
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
         </div>
       </div>
     </div>
