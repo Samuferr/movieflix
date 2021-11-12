@@ -1,6 +1,46 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
+import { Movie } from 'types/movie';
+import { BASE_URL } from 'util/request';
 import './styles.css';
 
+
+type UrlParams = {
+  movieId: string;
+}
+
 const MovieDetails = () => {
+
+  // const { movieId } = useParams<ParamsType>()
+  const {movieId} = useParams<UrlParams>();
+  const [movie, setMovie] = useState<Movie>()
+
+
+  // const [hasPermission, setHasPermission] = useState(false)
+  // const [isLoading, setIsLoading] = useState(true)
+
+  // const getMovies = useCallback(() => {
+  //   makePrivateRequest({ url: `/movies/${movieId}` })
+  //     .then(response => {
+  //       setMovie(response.data)
+  //       setIsLoading(false)
+  //     })
+  // }, [movieId])
+
+  //   useEffect(() => {
+  //   const currentUser = getAccessTokenDecoded()
+  //   setHasPermission(currentUser.authorities.toString() === 'ROLE_MEMBER')
+
+  //   getMovies()
+  // }, [getMovies])
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}/movies/${movieId}`).then(response => {
+      setMovie(response.data);
+  });
+  }, [movieId]);
+
   return (
     <div className="movie-details-container">
       <div className="details-container container">
@@ -8,17 +48,17 @@ const MovieDetails = () => {
           <div className="col-xl-6">
             <div className="img-container">
               <img
-                src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg"
-                alt="Movie Name"
+                src={movie?.imgUrl}
+                alt={movie?.title}
                 className="img-details"
               />
             </div>
           </div>
           <div className="col-xl-6" >
             <div className="title-subtitle-container">
-              <h1>O Retorno do Rei</h1>
-              <h6>2013</h6>
-              <p>O olho do inimigo está se movendo.</p>
+              <h1>{movie?.title}</h1>
+              <h6>{movie?.year}</h6>
+              <p>{movie?.subTitle}</p>
             </div>
             <div className="sinopse-container">
               <p>
