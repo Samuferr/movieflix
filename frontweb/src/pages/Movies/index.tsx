@@ -1,4 +1,5 @@
 import MovieCard from 'components/MovieCard';
+import Pagination from 'components/Pagination';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 
@@ -14,27 +15,30 @@ const Movies = () => {
 
   return (
     <div className="container my-4">
+      <div className="row container">
+        <div className="col-sm-6 col-md-5 col-lg-3">
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
+        </div>
+        <div className="col-sm-6 col-md-5 col-lg-3">
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
+        </div>
+        <div className="col-sm-6 col-md-5 col-lg-3">
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
+        </div>
+        <div className="col-sm-6 col-md-5 col-lg-3">
+          <Link to="/movies/1">
+            <MovieCard movie={movie} />
+          </Link>
+        </div>
+      </div>
       <div className="row">
-        <div className="col-sm-6 col-md-5 col-lg-3">
-          <Link to="/movies/1">
-            <MovieCard movie={movie} />
-          </Link>
-        </div>
-        <div className="col-sm-6 col-md-5 col-lg-3">
-          <Link to="/movies/1">
-            <MovieCard movie={movie} />
-          </Link>
-        </div>
-        <div className="col-sm-6 col-md-5 col-lg-3">
-          <Link to="/movies/1">
-            <MovieCard movie={movie} />
-          </Link>
-        </div>
-        <div className="col-sm-6 col-md-5 col-lg-3">
-          <Link to="/movies/1">
-            <MovieCard movie={movie} />
-          </Link>
-        </div>
+        <Pagination />
       </div>
     </div>
   );
