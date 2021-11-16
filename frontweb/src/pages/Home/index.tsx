@@ -1,4 +1,5 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
+import {Switch, Route} from 'react-router-dom'
 import './styles.css';
 
 const Home = () => {
@@ -17,7 +18,10 @@ const Home = () => {
             <MainImage />
           </div>
         </div>
-        <div className="base-card card-container">
+        <div className="base-card card-container auth-form-container">
+          <Switch>
+            <Route path="/admin/auth/login" />
+          </Switch>
           <h1>LOGIN</h1>
         </div>
       </div>
