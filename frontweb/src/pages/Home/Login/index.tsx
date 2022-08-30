@@ -1,5 +1,4 @@
 import {useForm} from 'react-hook-form'
-import {requestBackendLogin} from 'util/request';
 import './styles.css';
 
 type FormData = {
@@ -12,7 +11,7 @@ const Login = () => {
     const { register, handleSubmit } = useForm<FormData>();
     
     const onSubmit = (formData: FormData) => {
-        requestBackendLogin(formData)
+        (formData)
           .then(response => {
             console.log('SUCESSO', response);
           })

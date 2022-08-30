@@ -1,11 +1,10 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
 import Pagination from 'components/Pagination';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
-import { AxiosParams } from 'types/vendor/axios';
 import { SpringPage } from 'types/vendor/spring';
 import { BASE_URL } from 'util/request';
 
@@ -14,9 +13,10 @@ const Movies = () => {
     const [page, setPage] = useState<SpringPage<Movie>>();
 
     useEffect(()=> {
-      const params : AxiosParams = {
+      const params : AxiosRequestConfig = {
         method: 'GET',
-        url: `${BASE_URL}/movies`,
+        url: "/movies",
+        baseURL: BASE_URL,
         params: {
           page: 0,
           size: 12
