@@ -37,16 +37,13 @@
 
 .card-container {
   width: 100%;
-  padding: 15px;
   border: 1px solid red;
 }
 
-@media (min-width:1200px) {
+
+@media (min-width: 1200px) {
   .card-container {
     width: 479px;
-    margin-left: 353px;
-    margin-top: 43px;
-    margin-right: 116px;
   }
 
   .left-content {

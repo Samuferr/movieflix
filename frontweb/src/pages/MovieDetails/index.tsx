@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { BASE_URL } from 'util/request';
+//import { BASE_URL } from 'util/request';
 import './styles.css';
 
 
@@ -12,7 +13,6 @@ type UrlParams = {
 
 const MovieDetails = () => {
 
-  // const { movieId } = useParams<ParamsType>()
   const {movieId} = useParams<UrlParams>();
   const [movie, setMovie] = useState<Movie>()
 
