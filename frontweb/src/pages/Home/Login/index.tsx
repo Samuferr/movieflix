@@ -1,4 +1,6 @@
+import { request } from 'https';
 import {useForm} from 'react-hook-form'
+import { requestBackendLogin } from 'util/request';
 import './styles.css';
 
 type FormData = {
@@ -11,7 +13,7 @@ const Login = () => {
     const { register, handleSubmit } = useForm<FormData>();
     
     const onSubmit = (formData: FormData) => {
-        (formData)
+        requestBackendLogin(formData)
           .then(response => {
             console.log('SUCESSO', response);
           })
